@@ -12,7 +12,8 @@ from nltk.corpus import stopwords
 import string
 stopword = set(stopwords.words("english"))
 
-df = pd.read_csv("twitter_dataset.csv")
+file_path = r'm:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
+df = pd.read_csv(file_path)
 print(df.head())
 
 df['labels'] = df['class'].map({0:"Hate Speech Detected.", 1:"Offensive Language Detected.", 2:"No Hate or Offensive Speech."})
