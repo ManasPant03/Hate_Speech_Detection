@@ -12,7 +12,7 @@ from nltk.corpus import stopwords
 import string
 stopword = set(stopwords.words("english"))
 
-file_path = r'm:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
+file_path = r'M:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
 df = pd.read_csv(file_path)
 print(df.head())
 

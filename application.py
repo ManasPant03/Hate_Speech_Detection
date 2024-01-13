@@ -12,12 +12,10 @@ from nltk.corpus import stopwords
 import string
 stopword = set(stopwords.words("english"))
 
-file_path = r'm:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
+file_path = r'M:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
 df = pd.read_csv(file_path)
-#print(df.head())
 
 df['labels'] = df['class'].map({0:"Hate Speech Detected.", 1:"Offensive Language Detected.", 2:"No Hate or Offensive Speech."})
-#print(df.head())
 
 df = df[['tweet', 'labels']]
 df.head()
@@ -36,7 +34,6 @@ def clean(text):
     text = " ".join(text)
     return text
 df["tweet"] = df["tweet"].apply(clean)
-#print(df.head())
 
 x = np.array(df["tweet"])
 y = np.array(df["labels"])
