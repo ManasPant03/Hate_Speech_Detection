@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+import os
 
 import re
 import nltk
@@ -12,8 +13,7 @@ from nltk.corpus import stopwords
 import string
 stopword = set(stopwords.words("english"))
 
-file_path = r'M:\Study Material\Projects & Papers\Hate Speech Detection (3rd Sem)\twitter_dataset.csv'
-df = pd.read_csv(file_path)
+df = pd.read_csv('twitter_dataset.csv')
 print(df.head())
 
 df['labels'] = df['class'].map({0:"Hate Speech Detected.", 1:"Offensive Language Detected.", 2:"No Hate or Offensive Speech."})
