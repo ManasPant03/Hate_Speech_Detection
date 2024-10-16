@@ -16,7 +16,7 @@ from nltk.stem import SnowballStemmer
 stopword = set(stopwords.words("english"))
 stemmer = SnowballStemmer("english")
 
-df = pd.read_csv('twitter_dataset.csv')
+df = pd.read_csv('labeled_dataset.csv')
 print(df.head())
 
 df['labels'] = df['class'].map({
