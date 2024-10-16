@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
+import os
 import re
 import nltk
 nltk.download('stopwords')
@@ -19,9 +20,6 @@ df['labels'] = df['class'].map({0:"Hate Speech Detected.", 1:"Offensive Language
 
 df = df[['tweet', 'labels']]
 df.head()
-
-import re
-import string
 
 def clean(text):
     text = str(text).lower()
@@ -56,6 +54,5 @@ def hate_speech_detection():
     else:
         sample = user
         data = cv.transform([sample]).toarray()
-        a = clf.predict(data)
-        st.title(a)
+        st.title(clf.predict(data))
 hate_speech_detection()

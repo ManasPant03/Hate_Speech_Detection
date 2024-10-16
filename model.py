@@ -3,8 +3,8 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-import os
 
+import os
 import re
 import nltk
 nltk.download('stopwords')
@@ -48,6 +48,6 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.33, rand
 clf = DecisionTreeClassifier()
 clf.fit(X_train, y_train)
 
-test_data = "i will kill you"
+test_data = "hello"
 df = cv.transform([test_data]).toarray()
 print(clf.predict(df))
